@@ -2,13 +2,27 @@
 <html>
     <head>
         <title>d3.js data driven page</title>
-
+        <script src="https://d3js.org/d3.v6.min.js"></script>
     </head>
 
     <body>
         <p>
             This page is inspired by the 
             <a href="https://observablehq.com/@d3/bar-chart-race" target="_blank"><b>Bar Chart Race</b></a>
+            <button onclick="colorP()">Click me</button>
+
+
         </p>
+
+        <script>
+            d3.csv("category-brands.csv",
+            d => console.log(d)
+            )
+
+            function colorP() {
+                alert("ok");
+                d3.selectAll("p").style("color", "red");
+            }
+        </script>
     </body>
 </html>
